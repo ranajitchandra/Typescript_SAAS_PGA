@@ -26,18 +26,18 @@ export default function Header() {
 
                         <li>
                             <Link
-                                to="/about"
-                                className="hover:text-primary transition-colors"
-                            >
-                                About
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
                                 to="/blog"
                                 className="hover:text-primary transition-colors"
                             >
                                 Blog
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/about"
+                                className="hover:text-primary transition-colors"
+                            >
+                                About
                             </Link>
                         </li>
                     </ul>

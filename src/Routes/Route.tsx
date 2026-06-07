@@ -1,7 +1,7 @@
 
 import MainLayout from "@/Layouts/MainLayout";
 import AboutPage from "@/Pages/About/AboutPage";
-import BlogDetails from "@/Pages/Blog/BlogDetails/BlogDetails";
+import BlogDetailsPage from "@/Pages/Blog/BlogDetails/BlogDetailsPage";
 import BlogPage from "@/Pages/Blog/BlogPage";
 import CreateBlog from "@/Pages/Blog/CreateBlog/CreateBlog";
 import Home from "@/Pages/Home/HomePage";
@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/blog/:id",
-                element: <BlogDetails />,
+                element: <BlogDetailsPage />,
             },
             {
                 path: "/blog/create",

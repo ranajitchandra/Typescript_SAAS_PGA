@@ -1,8 +1,9 @@
+import BlogDetails from "./BlogDetails";
 
 export default function BlogDetailsPage() {
-  return (
-    <div>
-      
-    </div>
-  )
+    return (
+        <div>
+            <BlogDetails />
+        </div>
+    )
 }

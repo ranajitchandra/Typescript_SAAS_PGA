@@ -1,19 +1,54 @@
-export type Comment = {
+
+export interface Blog {
+    id: number;
+    title: string;
+    slug: string;
+    category: string;
+
+    excerpt: string;
+    content: string;
+
+    featuredImage: string;
+    images: string[];
+
+    author: {
+        name: string;
+        avatar: string;
+        role: string;
+    };
+
+    tags: string[];
+
+    likes: number;
+    dislikes: number;
+
+    rating: number;
+    totalRatings: number;
+
+    views: number;
+
+    readingTime: number;
+
+    publishedAt: string;
+
+    reviews: Review[];
+    comments: Comment[];
+}
+
+
+export type Review = {
     id: number;
     user: string;
-    message: string;
+    avatar: string;
+    rating: number;
+    review: string;
     date: string;
 };
 
-export type Blog = {
+export type Comment = {
     id: number;
-    title: string;
-    description: string;
-    images: string[];
-    author: string;
+    user: string;
+    avatar: string;
+    comment: string;
     date: string;
-    likes: number;
-    dislikes: number;
-    rating: number;
-    comments: Comment[];
 };
