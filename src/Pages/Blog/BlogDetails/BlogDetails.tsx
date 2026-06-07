@@ -1,6 +1,6 @@
 import { useParams } from "react-router";
-import { blogs } from "../../data/blogs";
-import ImageSlider from "../../components/blog/ImageSlider";
+import { blogs } from "../BlogList";
+import ImageSlider from "./ImageSlider";
 
 export default function BlogDetails() {
     const { id } = useParams();

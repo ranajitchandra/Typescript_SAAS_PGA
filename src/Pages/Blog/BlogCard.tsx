@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 export default function BlogCard({ blog }: { blog: Blog }) {
     return (
-        <div className="rounded-2xl border bg-white p-5 shadow-sm transition hover:shadow-md">
+        <div className="rounded-2xl border bg-white p-5 shadow-sm transition hover:shadow-md my-5">
 
             <h2 className="text-xl font-semibold text-[#1B2E4A]">
                 {blog.title}
