@@ -1,5 +1,265 @@
 import type { Blog } from "@/types/BlogType";
+import type { BookListing } from "@/types/BookList";
 
+
+
+export const bookListings: BookListing[] = [
+    {
+        id: 1,
+        postedBy: {
+            name: "Maya Rahman",
+            avatar: "https://i.pravatar.cc/150?img=32",
+            badge: "Verified seller",
+        },
+        postedAt: "2026-06-07",
+        title: "Atomic Habits",
+        description:
+            "A clean paperback copy with light underlines in the first two chapters. Great for building practical daily systems.",
+        image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=900&q=80",
+        sellerLocation: "Dhanmondi, Dhaka",
+        price: 620,
+        availableDuration: "Available for 12 days",
+        condition: "Like new",
+    },
+    {
+        id: 2,
+        postedBy: {
+            name: "Arif Hossain",
+            avatar: "https://i.pravatar.cc/150?img=52",
+            badge: "Fast response",
+        },
+        postedAt: "2026-06-06",
+        title: "Clean Code",
+        description:
+            "Developer favorite in excellent condition. Perfect for anyone serious about readable, maintainable software.",
+        image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80",
+        sellerLocation: "Uttara, Dhaka",
+        price: 980,
+        availableDuration: "Available for 8 days",
+        condition: "Excellent",
+    },
+    {
+        id: 3,
+        postedBy: {
+            name: "Nadia Islam",
+            avatar: "https://i.pravatar.cc/150?img=47",
+            badge: "Top rated",
+        },
+        postedAt: "2026-06-05",
+        title: "The Psychology of Money",
+        description:
+            "Hardcover edition with crisp pages and no markings.",
+        image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=900&q=80",
+        sellerLocation: "Banani, Dhaka",
+        price: 740,
+        availableDuration: "Available for 15 days",
+        condition: "New",
+    },
+    {
+        id: 4,
+        postedBy: {
+            name: "Tanvir Ahmed",
+            avatar: "https://i.pravatar.cc/150?img=18",
+            badge: "Campus seller",
+        },
+        postedAt: "2026-06-04",
+        title: "Designing Data-Intensive Applications",
+        description:
+            "Well-kept technical book for backend and distributed systems learners.",
+        image: "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=900&q=80",
+        sellerLocation: "Mirpur, Dhaka",
+        price: 1350,
+        availableDuration: "Available for 6 days",
+        condition: "Good",
+    },
+    {
+        id: 5,
+        postedBy: {
+            name: "Priya Sen",
+            avatar: "https://i.pravatar.cc/150?img=29",
+            badge: "Book lover",
+        },
+        postedAt: "2026-06-03",
+        title: "Deep Work",
+        description:
+            "Minimal wear, smooth pages, and a beautiful cover.",
+        image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=80",
+        sellerLocation: "Bashundhara R/A, Dhaka",
+        price: 560,
+        availableDuration: "Available for 10 days",
+        condition: "Very good",
+    },
+    {
+        id: 6,
+        postedBy: {
+            name: "Sabbir Khan",
+            avatar: "https://i.pravatar.cc/150?img=11",
+            badge: "Verified seller",
+        },
+        postedAt: "2026-06-02",
+        title: "Rich Dad Poor Dad",
+        description:
+            "Popular finance book with clean pages and sturdy binding.",
+        image: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=900&q=80",
+        sellerLocation: "Mohammadpur, Dhaka",
+        price: 450,
+        availableDuration: "Available for 7 days",
+        condition: "Good",
+    },
+    {
+        id: 7,
+        postedBy: {
+            name: "Farhana Akter",
+            avatar: "https://i.pravatar.cc/150?img=24",
+            badge: "Top rated",
+        },
+        postedAt: "2026-06-01",
+        title: "Think and Grow Rich",
+        description:
+            "Classic personal development book in great condition.",
+        image: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=900&q=80",
+        sellerLocation: "Gulshan, Dhaka",
+        price: 390,
+        availableDuration: "Available for 14 days",
+        condition: "Excellent",
+    },
+    {
+        id: 8,
+        postedBy: {
+            name: "Rakib Hasan",
+            avatar: "https://i.pravatar.cc/150?img=60",
+            badge: "Fast response",
+        },
+        postedAt: "2026-05-31",
+        title: "The Pragmatic Programmer",
+        description:
+            "A must-read for software developers. Minor cover wear.",
+        image: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=900&q=80",
+        sellerLocation: "Rampura, Dhaka",
+        price: 1150,
+        availableDuration: "Available for 5 days",
+        condition: "Very good",
+    },
+    {
+        id: 9,
+        postedBy: {
+            name: "Jannat Ara",
+            avatar: "https://i.pravatar.cc/150?img=44",
+            badge: "Book lover",
+        },
+        postedAt: "2026-05-30",
+        title: "Ikigai",
+        description:
+            "Motivational bestseller with no highlights or notes.",
+        image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=900&q=80",
+        sellerLocation: "Malibagh, Dhaka",
+        price: 520,
+        availableDuration: "Available for 11 days",
+        condition: "Like new",
+    },
+    {
+        id: 10,
+        postedBy: {
+            name: "Mehedi Hasan",
+            avatar: "https://i.pravatar.cc/150?img=67",
+            badge: "Campus seller",
+        },
+        postedAt: "2026-05-29",
+        title: "Eloquent JavaScript",
+        description:
+            "Perfect resource for learning modern JavaScript.",
+        image: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=80",
+        sellerLocation: "Farmgate, Dhaka",
+        price: 880,
+        availableDuration: "Available for 9 days",
+        condition: "Excellent",
+    },
+    {
+        id: 11,
+        postedBy: {
+            name: "Ritu Das",
+            avatar: "https://i.pravatar.cc/150?img=21",
+            badge: "Verified seller",
+        },
+        postedAt: "2026-05-28",
+        title: "Start With Why",
+        description:
+            "Leadership and motivation book in excellent shape.",
+        image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=80",
+        sellerLocation: "Shyamoli, Dhaka",
+        price: 480,
+        availableDuration: "Available for 13 days",
+        condition: "Very good",
+    },
+    {
+        id: 12,
+        postedBy: {
+            name: "Nafis Chowdhury",
+            avatar: "https://i.pravatar.cc/150?img=36",
+            badge: "Top rated",
+        },
+        postedAt: "2026-05-27",
+        title: "Refactoring",
+        description:
+            "Essential guide for improving existing codebases.",
+        image: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=900&q=80",
+        sellerLocation: "Badda, Dhaka",
+        price: 1290,
+        availableDuration: "Available for 4 days",
+        condition: "Good",
+    },
+    {
+        id: 13,
+        postedBy: {
+            name: "Sadia Noor",
+            avatar: "https://i.pravatar.cc/150?img=49",
+            badge: "Book lover",
+        },
+        postedAt: "2026-05-26",
+        title: "Sapiens",
+        description:
+            "Engaging history book with clean pages.",
+        image: "https://images.unsplash.com/photo-1519682577862-22b62b24e493?auto=format&fit=crop&w=900&q=80",
+        sellerLocation: "Tejgaon, Dhaka",
+        price: 690,
+        availableDuration: "Available for 16 days",
+        condition: "Like new",
+    },
+    {
+        id: 14,
+        postedBy: {
+            name: "Ashikur Rahman",
+            avatar: "https://i.pravatar.cc/150?img=15",
+            badge: "Fast response",
+        },
+        postedAt: "2026-05-25",
+        title: "Zero to One",
+        description:
+            "Startup and entrepreneurship classic with minimal wear.",
+        image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=900&q=80",
+        sellerLocation: "Khilgaon, Dhaka",
+        price: 540,
+        availableDuration: "Available for 12 days",
+        condition: "Excellent",
+    },
+    {
+        id: 15,
+        postedBy: {
+            name: "Tania Sultana",
+            avatar: "https://i.pravatar.cc/150?img=40",
+            badge: "Verified seller",
+        },
+        postedAt: "2026-05-24",
+        title: "The Lean Startup",
+        description:
+            "Great condition, ideal for entrepreneurs and product builders.",
+        image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=80",
+        sellerLocation: "Wari, Dhaka",
+        price: 610,
+        availableDuration: "Available for 7 days",
+        condition: "Very good",
+    },
+];
 type BlogSeed = Omit<Blog, "reviews" | "comments">;
 
 const blogSeeds: BlogSeed[] = [
