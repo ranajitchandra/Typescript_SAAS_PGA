@@ -9,8 +9,7 @@ export default function BlogCard({
     blog,
 }: BlogCardProps) {
     return (
-        <article className="overflow-hidden rounded-3xl border bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-            {/* Image */}
+        <article className="overflow-hidden rounded-3xl border bg-card text-card-foreground shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
             <div className="relative">
                 <img
                     src={blog.featuredImage}
@@ -18,46 +17,40 @@ export default function BlogCard({
                     className="h-60 w-full object-cover"
                 />
 
-                <span className="absolute left-4 top-4 rounded-full bg-[#C4A265] px-3 py-1 text-xs font-medium text-[#1B2E4A]">
+                <span className="absolute left-4 top-4 rounded-full bg-accent px-3 py-1 text-xs font-medium text-accent-foreground">
                     {blog.category}
                 </span>
             </div>
 
             <div className="p-6">
-                {/* Meta */}
-                <div className="mb-3 flex flex-wrap items-center gap-3 text-xs text-gray-500">
+                <div className="mb-3 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
                     <span>{blog.publishedAt}</span>
-                    <span>•</span>
+                    <span>-</span>
                     <span>{blog.readingTime} min read</span>
-                    <span>•</span>
+                    <span>-</span>
                     <span>{blog.views.toLocaleString()} views</span>
                 </div>
 
-                {/* Title */}
-                <h2 className="line-clamp-2 text-xl font-bold text-[#1B2E4A]">
+                <h2 className="line-clamp-2 text-xl font-bold text-card-foreground">
                     {blog.title}
                 </h2>
 
-                {/* Excerpt */}
-                <p className="mt-3 line-clamp-3 text-sm text-gray-600">
+                <p className="mt-3 line-clamp-3 text-sm text-muted-foreground">
                     {blog.excerpt}
                 </p>
 
-                {/* Tags */}
                 <div className="mt-4 flex flex-wrap gap-2">
                     {blog.tags.slice(0, 3).map((tag) => (
                         <span
                             key={tag}
-                            className="rounded-full border border-[#C4A265]/30 bg-[#C4A265]/10 px-3 py-1 text-xs text-[#1B2E4A]"
+                            className="rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs text-foreground"
                         >
                             #{tag}
                         </span>
                     ))}
                 </div>
 
-                {/* Footer */}
                 <div className="mt-6 flex items-center justify-between">
-                    {/* Author */}
                     <div className="flex items-center gap-3">
                         <img
                             src={blog.author.avatar}
@@ -66,11 +59,11 @@ export default function BlogCard({
                         />
 
                         <div>
-                            <p className="text-sm font-semibold text-[#1B2E4A]">
+                            <p className="text-sm font-semibold text-card-foreground">
                                 {blog.author.name}
                             </p>
 
-                            <p className="text-xs text-gray-500">
+                            <p className="text-xs text-muted-foreground">
                                 {blog.author.role}
                             </p>
                         </div>
@@ -78,18 +71,17 @@ export default function BlogCard({
 
                     <Link
                         to={`/blog/${blog.id}`}
-                        className="rounded-xl bg-[#1B2E4A] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#243c60]"
+                        className="rounded-xl bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition hover:bg-primary/85"
                     >
                         Read More
                     </Link>
                 </div>
 
-                {/* Stats */}
-                <div className="mt-5 flex flex-wrap gap-4 border-t pt-4 text-sm text-gray-500">
-                    <span>❤️ {blog.likes}</span>
-                    <span>👎 {blog.dislikes}</span>
+                <div className="mt-5 flex flex-wrap gap-4 border-t pt-4 text-sm text-muted-foreground">
+                    <span>Likes {blog.likes}</span>
+                    <span>Dislikes {blog.dislikes}</span>
                     <span>
-                        ⭐ {blog.rating} ({blog.totalRatings})
+                        Rating {blog.rating} ({blog.totalRatings})
                     </span>
                 </div>
             </div>

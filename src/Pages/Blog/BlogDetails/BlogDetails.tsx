@@ -33,7 +33,7 @@ export default function BlogDetails() {
     if (!blog) {
         return (
             <div className="py-20 text-center">
-                <h2 className="text-3xl font-bold text-[#1B2E4A]">
+                <h2 className="text-3xl font-bold text-foreground">
                     Blog Not Found
                 </h2>
             </div>
@@ -103,9 +103,9 @@ export default function BlogDetails() {
     };
 
     return (
-        <section className="bg-gradient-to-b from-[#F7F2E8]/70 via-white to-white">
+        <section className="bg-gradient-to-b from-secondary/70 via-background to-background">
             <div className="mx-auto max-w-6xl px-4 py-10">
-                <div className="overflow-hidden rounded-[2rem] bg-[#1B2E4A] shadow-2xl shadow-[#1B2E4A]/20">
+                <div className="overflow-hidden rounded-[2rem] bg-primary shadow-2xl shadow-primary/20">
                     <div className="relative">
                         <img
                             src={blog.featuredImage}
@@ -113,55 +113,55 @@ export default function BlogDetails() {
                             className="h-[300px] w-full object-cover opacity-80 md:h-[520px]"
                         />
 
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#1B2E4A] via-[#1B2E4A]/45 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/45 to-transparent" />
 
                         <div className="absolute inset-x-0 bottom-0 p-6 md:p-10">
-                            <span className="inline-flex items-center gap-2 rounded-full bg-[#C4A265] px-4 py-2 text-sm font-semibold text-[#1B2E4A]">
+                            <span className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground">
                                 <Sparkles className="h-4 w-4" />
                                 {blog.category}
                             </span>
 
-                            <h1 className="mt-5 max-w-4xl text-3xl font-bold text-white md:text-5xl">
+                            <h1 className="mt-5 max-w-4xl text-3xl font-bold text-primary-foreground md:text-5xl">
                                 {blog.title}
                             </h1>
 
-                            <p className="mt-4 max-w-3xl text-base leading-7 text-white/85 md:text-lg">
+                            <p className="mt-4 max-w-3xl text-base leading-7 text-primary-foreground/85 md:text-lg">
                                 {blog.excerpt}
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <div className="mt-8 flex flex-col gap-5 rounded-3xl border border-[#C4A265]/20 bg-white p-5 shadow-lg shadow-[#1B2E4A]/5 md:flex-row md:items-center">
+                <div className="mt-8 flex flex-col gap-5 rounded-3xl border border-accent/20 bg-card p-5 text-card-foreground shadow-lg shadow-primary/5 md:flex-row md:items-center">
                     <div className="flex items-center gap-4">
                         <img
                             src={blog.author.avatar}
                             alt={blog.author.name}
-                            className="h-14 w-14 rounded-full object-cover ring-4 ring-[#C4A265]/20"
+                            className="h-14 w-14 rounded-full object-cover ring-4 ring-accent/20"
                         />
 
                         <div>
-                            <h3 className="font-semibold text-[#1B2E4A]">
+                            <h3 className="font-semibold text-card-foreground">
                                 {blog.author.name}
                             </h3>
 
-                            <p className="text-sm text-gray-500">
+                            <p className="text-sm text-muted-foreground">
                                 {blog.author.role}
                             </p>
                         </div>
                     </div>
 
-                    <div className="grid gap-3 text-sm text-gray-600 sm:grid-cols-3 md:ml-auto">
+                    <div className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-3 md:ml-auto">
                         <span className="inline-flex items-center gap-2">
-                            <CalendarDays className="h-4 w-4 text-[#C4A265]" />
+                            <CalendarDays className="h-4 w-4 text-accent" />
                             {blog.publishedAt}
                         </span>
                         <span className="inline-flex items-center gap-2">
-                            <Eye className="h-4 w-4 text-[#C4A265]" />
+                            <Eye className="h-4 w-4 text-accent" />
                             {blog.views.toLocaleString()} views
                         </span>
                         <span className="inline-flex items-center gap-2">
-                            <Clock className="h-4 w-4 text-[#C4A265]" />
+                            <Clock className="h-4 w-4 text-accent" />
                             {blog.readingTime} min read
                         </span>
                     </div>
@@ -172,7 +172,7 @@ export default function BlogDetails() {
                 </div>
 
                 <article className="mx-auto mt-12 max-w-4xl">
-                    <div className="space-y-6 text-lg leading-9 text-gray-700">
+                    <div className="space-y-6 text-lg leading-9 text-muted-foreground">
                         <p>{blog.content}</p>
                         <p>
                             This article explores modern techniques, best
@@ -200,7 +200,7 @@ export default function BlogDetails() {
                         value={blog.dislikes.toString()}
                     />
                     <StatCard
-                        icon={<Star className="h-7 w-7 fill-[#C4A265]" />}
+                        icon={<Star className="h-7 w-7 fill-accent" />}
                         label={`${blog.totalRatings + localReviews.length} Ratings`}
                         value={averageRating}
                     />
@@ -212,18 +212,18 @@ export default function BlogDetails() {
                 </div>
 
                 <div className="mt-12 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-                    <section className="rounded-3xl border border-[#C4A265]/20 bg-white p-6 shadow-lg shadow-[#1B2E4A]/5">
+                    <section className="rounded-3xl border border-accent/20 bg-card p-6 text-card-foreground shadow-lg shadow-primary/5">
                         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
                             <div>
-                                <p className="text-sm font-semibold uppercase tracking-wider text-[#C4A265]">
+                                <p className="text-sm font-semibold uppercase tracking-wider text-accent">
                                     Reader Reviews
                                 </p>
-                                <h2 className="text-3xl font-bold text-[#1B2E4A]">
+                                <h2 className="text-3xl font-bold text-card-foreground">
                                     {averageRating} average rating
                                 </h2>
                             </div>
 
-                            <div className="flex items-center gap-1 text-[#C4A265]">
+                            <div className="flex items-center gap-1 text-accent">
                                 {starValues.map((star) => (
                                     <Star
                                         key={star}
@@ -235,9 +235,9 @@ export default function BlogDetails() {
 
                         <form
                             onSubmit={handleReviewSubmit}
-                            className="mt-6 rounded-2xl bg-[#F7F2E8] p-5"
+                            className="mt-6 rounded-2xl bg-secondary p-5"
                         >
-                            <label className="text-sm font-semibold text-[#1B2E4A]">
+                            <label className="text-sm font-semibold text-secondary-foreground">
                                 Your rating
                             </label>
                             <div className="mt-3 flex gap-2">
@@ -246,7 +246,7 @@ export default function BlogDetails() {
                                         key={star}
                                         type="button"
                                         onClick={() => setSelectedRating(star)}
-                                        className="rounded-full p-1 text-[#C4A265] transition hover:scale-110"
+                                        className="rounded-full p-1 text-accent transition hover:scale-110"
                                         aria-label={`${star} star rating`}
                                     >
                                         <Star
@@ -266,12 +266,12 @@ export default function BlogDetails() {
                                     setReviewText(event.target.value)
                                 }
                                 placeholder="Write a review for this article..."
-                                className="mt-4 min-h-28 w-full rounded-2xl border border-[#C4A265]/30 bg-white px-4 py-3 text-sm text-[#1B2E4A] outline-none transition focus:border-[#C4A265] focus:ring-4 focus:ring-[#C4A265]/20"
+                                className="mt-4 min-h-28 w-full rounded-2xl border border-accent/30 bg-background px-4 py-3 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-4 focus:ring-ring/20"
                             />
 
                             <button
                                 type="submit"
-                                className="mt-4 inline-flex items-center gap-2 rounded-2xl bg-[#1B2E4A] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#243c60]"
+                                className="mt-4 inline-flex items-center gap-2 rounded-2xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary/85"
                             >
                                 <Send className="h-4 w-4" />
                                 Submit Review
@@ -288,10 +288,10 @@ export default function BlogDetails() {
                         </div>
                     </section>
 
-                    <section className="rounded-3xl bg-[#1B2E4A] p-6 text-white shadow-2xl shadow-[#1B2E4A]/20">
+                    <section className="rounded-3xl bg-primary p-6 text-primary-foreground shadow-2xl shadow-primary/20">
                         <div className="flex items-center justify-between gap-4">
                             <div>
-                                <p className="text-sm font-semibold uppercase tracking-wider text-[#C4A265]">
+                                <p className="text-sm font-semibold uppercase tracking-wider text-accent">
                                     Discussion
                                 </p>
                                 <h2 className="text-3xl font-bold">
@@ -299,12 +299,12 @@ export default function BlogDetails() {
                                 </h2>
                             </div>
 
-                            <MessageCircle className="h-10 w-10 text-[#C4A265]" />
+                            <MessageCircle className="h-10 w-10 text-accent" />
                         </div>
 
                         <form
                             onSubmit={handleCommentSubmit}
-                            className="mt-6 rounded-2xl bg-white/10 p-4"
+                            className="mt-6 rounded-2xl bg-primary-foreground/10 p-4"
                         >
                             <textarea
                                 value={commentText}
@@ -312,12 +312,12 @@ export default function BlogDetails() {
                                     setCommentText(event.target.value)
                                 }
                                 placeholder="Join the conversation..."
-                                className="min-h-28 w-full rounded-2xl border border-white/15 bg-white px-4 py-3 text-sm text-[#1B2E4A] outline-none transition focus:border-[#C4A265] focus:ring-4 focus:ring-[#C4A265]/20"
+                                className="min-h-28 w-full rounded-2xl border border-primary-foreground/15 bg-background px-4 py-3 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-4 focus:ring-ring/20"
                             />
 
                             <button
                                 type="submit"
-                                className="mt-4 inline-flex items-center gap-2 rounded-2xl bg-[#C4A265] px-5 py-3 text-sm font-semibold text-[#1B2E4A] transition hover:bg-[#d2b77d]"
+                                className="mt-4 inline-flex items-center gap-2 rounded-2xl bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition hover:opacity-90"
                             >
                                 <Send className="h-4 w-4" />
                                 Add Comment
@@ -337,7 +337,7 @@ export default function BlogDetails() {
 
                 <div className="mt-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
                     <div>
-                        <h3 className="mb-4 text-xl font-semibold text-[#1B2E4A]">
+                        <h3 className="mb-4 text-xl font-semibold text-foreground">
                             Tags
                         </h3>
 
@@ -345,7 +345,7 @@ export default function BlogDetails() {
                             {blog.tags.map((tag) => (
                                 <span
                                     key={tag}
-                                    className="rounded-full border border-[#C4A265]/20 bg-[#C4A265]/10 px-4 py-2 text-sm font-medium text-[#1B2E4A]"
+                                    className="rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-sm font-medium text-foreground"
                                 >
                                     #{tag}
                                 </span>
@@ -354,7 +354,7 @@ export default function BlogDetails() {
                     </div>
 
                     <div>
-                        <h3 className="mb-4 text-xl font-semibold text-[#1B2E4A]">
+                        <h3 className="mb-4 text-xl font-semibold text-foreground">
                             Share Article
                         </h3>
 
@@ -362,14 +362,14 @@ export default function BlogDetails() {
                             {["Facebook", "LinkedIn"].map((label) => (
                                 <button
                                     key={label}
-                                    className="inline-flex items-center gap-2 rounded-2xl bg-[#1B2E4A] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#243c60]"
+                                    className="inline-flex items-center gap-2 rounded-2xl bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary/85"
                                 >
                                     <Share2 className="h-4 w-4" />
                                     {label}
                                 </button>
                             ))}
 
-                            <button className="inline-flex items-center gap-2 rounded-2xl border border-[#C4A265]/30 bg-white px-5 py-3 text-sm font-semibold text-[#1B2E4A] transition hover:bg-[#F7F2E8]">
+                            <button className="inline-flex items-center gap-2 rounded-2xl border border-accent/30 bg-background px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary">
                                 <Copy className="h-4 w-4" />
                                 Copy Link
                             </button>
@@ -377,12 +377,12 @@ export default function BlogDetails() {
                     </div>
                 </div>
 
-                <div className="mt-14 rounded-3xl bg-[#1B2E4A] p-8 text-white">
+                <div className="mt-14 rounded-3xl bg-primary p-8 text-primary-foreground">
                     <div className="flex flex-col gap-5 md:flex-row md:items-center">
                         <img
                             src={blog.author.avatar}
                             alt={blog.author.name}
-                            className="h-24 w-24 rounded-full object-cover ring-4 ring-[#C4A265]/40"
+                            className="h-24 w-24 rounded-full object-cover ring-4 ring-accent/40"
                         />
 
                         <div>
@@ -390,11 +390,11 @@ export default function BlogDetails() {
                                 {blog.author.name}
                             </h3>
 
-                            <p className="text-[#C4A265]">
+                            <p className="text-accent">
                                 {blog.author.role}
                             </p>
 
-                            <p className="mt-3 text-white/80">
+                            <p className="mt-3 text-primary-foreground/80">
                                 Passionate about frontend architecture,
                                 scalable React applications, and creating
                                 exceptional user experiences.
@@ -404,7 +404,7 @@ export default function BlogDetails() {
                 </div>
 
                 <div className="mt-16">
-                    <h2 className="mb-6 text-3xl font-bold text-[#1B2E4A]">
+                    <h2 className="mb-6 text-3xl font-bold text-foreground">
                         Related Articles
                     </h2>
 
@@ -413,7 +413,7 @@ export default function BlogDetails() {
                             <Link
                                 key={item.id}
                                 to={`/blog/${item.id}`}
-                                className="overflow-hidden rounded-3xl border bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                                className="overflow-hidden rounded-3xl border bg-card text-card-foreground shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
                             >
                                 <img
                                     src={item.featuredImage}
@@ -422,11 +422,11 @@ export default function BlogDetails() {
                                 />
 
                                 <div className="p-4">
-                                    <h3 className="font-semibold text-[#1B2E4A]">
+                                    <h3 className="font-semibold text-card-foreground">
                                         {item.title}
                                     </h3>
 
-                                    <p className="mt-2 text-sm text-gray-500">
+                                    <p className="mt-2 text-sm text-muted-foreground">
                                         {item.readingTime} min read
                                     </p>
                                 </div>
@@ -439,7 +439,7 @@ export default function BlogDetails() {
                     {previousBlog ? (
                         <Link
                             to={`/blog/${previousBlog.id}`}
-                            className="rounded-2xl border border-[#C4A265]/30 bg-white px-5 py-3 font-semibold text-[#1B2E4A] transition hover:bg-[#F7F2E8]"
+                            className="rounded-2xl border border-accent/30 bg-background px-5 py-3 font-semibold text-foreground transition hover:bg-secondary"
                         >
                             Previous
                         </Link>
@@ -450,7 +450,7 @@ export default function BlogDetails() {
                     {nextBlog && (
                         <Link
                             to={`/blog/${nextBlog.id}`}
-                            className="rounded-2xl bg-[#1B2E4A] px-5 py-3 font-semibold text-white transition hover:bg-[#243c60]"
+                            className="rounded-2xl bg-primary px-5 py-3 font-semibold text-primary-foreground transition hover:bg-primary/85"
                         >
                             Next
                         </Link>
@@ -471,19 +471,19 @@ function StatCard({
     value: string;
 }) {
     return (
-        <div className="rounded-3xl border border-[#C4A265]/20 bg-white p-6 text-center shadow-lg shadow-[#1B2E4A]/5">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#C4A265]/15 text-[#C4A265]">
+        <div className="rounded-3xl border border-accent/20 bg-card p-6 text-center text-card-foreground shadow-lg shadow-primary/5">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/15 text-accent">
                 {icon}
             </div>
-            <p className="mt-4 text-3xl font-bold text-[#1B2E4A]">{value}</p>
-            <p className="mt-1 text-sm text-gray-500">{label}</p>
+            <p className="mt-4 text-3xl font-bold text-card-foreground">{value}</p>
+            <p className="mt-1 text-sm text-muted-foreground">{label}</p>
         </div>
     );
 }
 
 function ReviewCard({ review }: { review: Review }) {
     return (
-        <div className="rounded-2xl border border-[#C4A265]/15 bg-white p-5">
+        <div className="rounded-2xl border border-accent/15 bg-background p-5">
             <div className="flex items-start gap-4">
                 <img
                     src={review.avatar}
@@ -494,15 +494,15 @@ function ReviewCard({ review }: { review: Review }) {
                 <div className="min-w-0 flex-1">
                     <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                         <div>
-                            <h3 className="font-semibold text-[#1B2E4A]">
+                            <h3 className="font-semibold text-foreground">
                                 {review.user}
                             </h3>
-                            <p className="text-xs text-gray-500">
+                            <p className="text-xs text-muted-foreground">
                                 {review.date}
                             </p>
                         </div>
 
-                        <div className="flex items-center gap-1 text-[#C4A265]">
+                        <div className="flex items-center gap-1 text-accent">
                             {starValues.map((star) => (
                                 <Star
                                     key={star}
@@ -516,7 +516,7 @@ function ReviewCard({ review }: { review: Review }) {
                         </div>
                     </div>
 
-                    <p className="mt-3 text-sm leading-6 text-gray-600">
+                    <p className="mt-3 text-sm leading-6 text-muted-foreground">
                         {review.review}
                     </p>
                 </div>
@@ -527,7 +527,7 @@ function ReviewCard({ review }: { review: Review }) {
 
 function CommentCard({ comment }: { comment: BlogComment }) {
     return (
-        <div className="rounded-2xl bg-white/10 p-4">
+        <div className="rounded-2xl bg-primary-foreground/10 p-4">
             <div className="flex gap-4">
                 <img
                     src={comment.avatar}
@@ -538,12 +538,12 @@ function CommentCard({ comment }: { comment: BlogComment }) {
                 <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                         <h3 className="font-semibold">{comment.user}</h3>
-                        <span className="text-xs text-white/55">
+                        <span className="text-xs text-primary-foreground/55">
                             {comment.date}
                         </span>
                     </div>
 
-                    <p className="mt-2 text-sm leading-6 text-white/80">
+                    <p className="mt-2 text-sm leading-6 text-primary-foreground/80">
                         {comment.comment}
                     </p>
                 </div>

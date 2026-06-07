@@ -2,7 +2,7 @@ export default function CreateBlog() {
     return (
         <div className="mx-auto max-w-2xl p-6">
 
-            <h1 className="text-2xl font-bold text-[#1B2E4A]">
+            <h1 className="text-2xl font-bold text-foreground">
                 Create Blog
             </h1>
 
@@ -10,17 +10,17 @@ export default function CreateBlog() {
 
                 <input
                     placeholder="Title"
-                    className="w-full rounded-xl border p-3"
+                    className="w-full rounded-xl border bg-background p-3 text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-4 focus:ring-ring/20"
                 />
 
                 <textarea
                     placeholder="Description"
-                    className="w-full rounded-xl border p-3"
+                    className="w-full rounded-xl border bg-background p-3 text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-4 focus:ring-ring/20"
                 />
 
                 <button
                     type="submit"
-                    className="rounded-xl bg-[#C4A265] px-6 py-3 text-[#1B2E4A]"
+                    className="rounded-xl bg-accent px-6 py-3 font-medium text-accent-foreground transition hover:opacity-90"
                 >
                     Publish
                 </button>

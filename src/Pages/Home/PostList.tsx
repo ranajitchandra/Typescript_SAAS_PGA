@@ -44,7 +44,7 @@ export default function PostList() {
     }, [fetchNextPage, hasNextPage]);
 
     if (status === "pending") {
-        return <p>Loading...</p>;
+        return <p className="text-muted-foreground">Loading...</p>;
     }
 
     return (
@@ -64,7 +64,7 @@ export default function PostList() {
                 className="h-10 flex items-center justify-center"
             >
                 {isFetchingNextPage && (
-                    <p className="text-gray-500">
+                    <p className="text-muted-foreground">
                         Loading more...
                     </p>
                 )}

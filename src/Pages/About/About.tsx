@@ -27,12 +27,12 @@ export default function About() {
         <div className="min-h-screen bg-background text-foreground">
 
             {/* Hero */}
-            <section className="bg-[#1B2E4A] py-20 text-center text-white">
+            <section className="bg-primary py-20 text-center text-primary-foreground">
                 <h1 className="text-4xl font-bold">
                     About Our Platform
                 </h1>
 
-                <p className="mt-3 text-white/80">
+                <p className="mt-3 text-primary-foreground/80">
                     Modern React system built with TypeScript & scalability in mind.
                 </p>
             </section>
@@ -47,12 +47,12 @@ export default function About() {
             </section>
 
             {/* Story */}
-            <section className="bg-[#F8F8F8] py-16 text-center">
-                <h2 className="text-3xl font-bold text-[#1B2E4A]">
+            <section className="bg-muted py-16 text-center">
+                <h2 className="text-3xl font-bold text-foreground">
                     Our Story
                 </h2>
 
-                <p className="mx-auto mt-4 max-w-3xl text-gray-600">
+                <p className="mx-auto mt-4 max-w-3xl text-muted-foreground">
                     We build scalable frontend systems focusing on performance,
                     maintainability and clean architecture using React ecosystem.
                 </p>

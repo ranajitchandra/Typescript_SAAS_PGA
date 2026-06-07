@@ -7,12 +7,12 @@ type FeatureCardProps = {
 
 export default function FeatureCard({ item }: FeatureCardProps) {
     return (
-        <div className="rounded-2xl border bg-white p-6 shadow-sm transition hover:shadow-md">
-            <h3 className="text-lg font-semibold text-[#1B2E4A]">
+        <div className="rounded-2xl border bg-card p-6 text-card-foreground shadow-sm transition hover:shadow-md">
+            <h3 className="text-lg font-semibold text-card-foreground">
                 {item.title}
             </h3>
 
-            <p className="mt-2 text-sm text-gray-600">
+            <p className="mt-2 text-sm text-muted-foreground">
                 {item.description}
             </p>
         </div>

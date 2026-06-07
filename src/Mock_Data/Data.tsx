@@ -252,7 +252,7 @@ const blogSeeds: BlogSeed[] = [
             "Build beautiful user interfaces faster using Tailwind CSS.",
         content:
             "Tailwind CSS enables rapid UI development with utility-first classes and consistent design systems.",
-        featuredImage: "https://picsum.photos/id/1090/1200/700",
+        featuredImage: "https://picsum.photos/id/1000/1200/700",
         images: [
             "https://picsum.photos/id/1090/1200/700",
             "https://picsum.photos/id/1091/1200/700",
@@ -282,7 +282,7 @@ const blogSeeds: BlogSeed[] = [
             "Learn deployment workflows using Vercel, Netlify and Docker.",
         content:
             "Modern deployment platforms make it easy to host, scale and maintain React applications.",
-        featuredImage: "https://picsum.photos/id/1100/1200/700",
+        featuredImage: "https://picsum.photos/id/100/1200/700",
         images: [
             "https://picsum.photos/id/1100/1200/700",
             "https://picsum.photos/id/1101/1200/700",
