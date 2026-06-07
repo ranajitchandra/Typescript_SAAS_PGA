@@ -51,6 +51,8 @@
 /* Preferred Color */
 
 :root {
+    color-scheme: light;
+
     --background: #FFFFFF;
     --foreground: #1B2E4A;
 
@@ -97,6 +99,8 @@
 }
 
 .dark {
+    color-scheme: dark;
+
     --background: #0F172A;
     --foreground: #FFFFFF;
 
@@ -141,7 +145,7 @@
     }
 
     body {
-        @apply bg-background text-foreground;
+        @apply bg-background text-foreground transition-colors;
     }
 
     html {

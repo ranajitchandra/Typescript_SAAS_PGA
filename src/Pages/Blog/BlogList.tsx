@@ -9,11 +9,11 @@ export default function BlogList() {
       {/* Header */}
       <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div>
-          <h1 className="text-4xl font-bold text-[#1B2E4A]">
+          <h1 className="text-4xl font-bold text-foreground">
             Blog Articles
           </h1>
 
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Insights, tutorials, best practices and modern
             frontend development guides.
           </p>
@@ -21,19 +21,19 @@ export default function BlogList() {
 
         <Link
           to="/blog/create"
-          className="inline-flex items-center justify-center rounded-2xl bg-[#C4A265] px-6 py-3 font-medium text-[#1B2E4A] transition hover:opacity-90"
+          className="inline-flex items-center justify-center rounded-2xl bg-accent px-6 py-3 font-medium text-accent-foreground transition hover:opacity-90"
         >
           Create Blog
         </Link>
       </div>
 
       {/* Featured Section */}
-      <div className="mb-10 rounded-3xl bg-[#1B2E4A] p-8 text-white">
+      <div className="mb-10 rounded-3xl bg-primary p-8 text-primary-foreground">
         <h2 className="text-2xl font-bold">
           Featured Articles
         </h2>
 
-        <p className="mt-2 text-white/80">
+        <p className="mt-2 text-primary-foreground/80">
           Discover our most popular and highly rated content.
         </p>
       </div>
