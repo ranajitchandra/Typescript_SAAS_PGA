@@ -1,8 +1,17 @@
 // src/components/shared/Header.tsx
 
-import { BookOpen, Moon, Sun } from "lucide-react";
+import { BookOpen, Menu, Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
+import {
+    Sheet,
+    SheetClose,
+    SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/Components/ui/sheet";
 
 const navLinks = [
     { to: "/", label: "Home" },
@@ -16,6 +25,14 @@ const getNavLinkClass = ({ isActive }: { isActive: boolean }) =>
         isActive
             ? "bg-primary text-primary-foreground shadow-sm shadow-primary/20"
             : "text-muted-foreground hover:bg-muted hover:text-foreground",
+    ].join(" ");
+
+const getMobileNavLinkClass = ({ isActive }: { isActive: boolean }) =>
+    [
+        "flex items-center rounded-xl px-4 py-3 text-base font-semibold transition",
+        isActive
+            ? "bg-primary text-primary-foreground shadow-sm shadow-primary/20"
+            : "bg-card text-muted-foreground hover:bg-muted hover:text-foreground",
     ].join(" ");
 
 export default function Header() {
@@ -40,7 +57,7 @@ export default function Header() {
 
     return (
         <header className="sticky top-0 z-50 border-b bg-background/90 text-foreground shadow-sm backdrop-blur-xl">
-            <div className="container mx-auto flex flex-wrap items-center justify-between gap-4 px-4 py-4">
+            <div className="container mx-auto flex items-center justify-between gap-4 px-4 py-4">
                 <Link
                     to="/"
                     className="inline-flex items-center gap-3 text-xl font-bold text-foreground"
@@ -53,8 +70,8 @@ export default function Header() {
                     </span>
                 </Link>
 
-                <nav>
-                    <ul className="flex items-center gap-2 rounded-full border bg-card p-1 shadow-sm">
+                <nav className="hidden md:block">
+                    <ul className="flex items-center gap-2 rounded-full border bg-card py-1 shadow-sm">
                         {navLinks.map((item) => (
                             <li key={item.to}>
                                 <NavLink
@@ -68,7 +85,7 @@ export default function Header() {
                         ))}
                     </ul>
                 </nav>
-                <nav>
+                <nav className="hidden md:block">
                     <ul className="flex items-center gap-3">
                         <li>
                             <Link
@@ -91,7 +108,7 @@ export default function Header() {
                             <button
                                 type="button"
                                 onClick={() => setIsDarkMode((current) => !current)}
-                                className="inline-flex h-10 w-10 items-center justify-center rounded-full border bg-card text-foreground shadow-sm transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                                className="inline-flex h-10 w-10 items-center justify-center rounded-full border bg-card text-foreground shadow-sm transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring cursor-pointer"
                                 aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
                                 title={isDarkMode ? "Light mode" : "Dark mode"}
                             >
@@ -104,6 +121,96 @@ export default function Header() {
                         </li>
                     </ul>
                 </nav>
+
+                <div className="flex items-center gap-2 md:hidden">
+                    <button
+                        type="button"
+                        onClick={() => setIsDarkMode((current) => !current)}
+                        className="inline-flex h-10 w-10 items-center justify-center rounded-full border bg-card text-foreground shadow-sm transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                        aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+                        title={isDarkMode ? "Light mode" : "Dark mode"}
+                    >
+                        {isDarkMode ? (
+                            <Sun className="h-4 w-4" />
+                        ) : (
+                            <Moon className="h-4 w-4" />
+                        )}
+                    </button>
+
+                    <Sheet>
+                        <SheetTrigger asChild>
+                            <button
+                                type="button"
+                                className="inline-flex h-10 w-10 items-center justify-center rounded-full border bg-card text-foreground shadow-sm transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                                aria-label="Open navigation menu"
+                            >
+                                <Menu className="h-5 w-5" />
+                            </button>
+                        </SheetTrigger>
+
+                        <SheetContent>
+                            <SheetHeader>
+                                <SheetTitle>
+                                    BookSealer
+                                </SheetTitle>
+                                <SheetDescription>
+                                    Browse books, read articles, and manage your marketplace account.
+                                </SheetDescription>
+                            </SheetHeader>
+
+                            <div className="mt-8 flex flex-col gap-6">
+                                <nav>
+                                    <ul className="space-y-3 ">
+                                        {navLinks.map((item) => (
+                                            <li key={item.to} className="w-full">
+                                                <SheetClose asChild>
+                                                    <NavLink
+                                                        to={item.to}
+                                                        end={item.to === "/"}
+                                                        className={({ isActive }) =>
+                                                            `${getMobileNavLinkClass({ isActive })} w-full block`
+                                                        }
+                                                    >
+                                                        {item.label}
+                                                    </NavLink>
+                                                </SheetClose>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </nav>
+
+                                <div className="rounded-2xl border bg-card p-4">
+                                    <p className="text-sm font-semibold text-foreground">
+                                        Ready to sell a book?
+                                    </p>
+                                    <p className="mt-1 text-sm text-muted-foreground">
+                                        Create a trusted listing and reach nearby readers faster.
+                                    </p>
+                                </div>
+
+                                <div className="grid gap-3">
+                                    <SheetClose asChild>
+                                        <Link
+                                            to="/"
+                                            className="inline-flex items-center justify-center rounded-xl border bg-background px-4 py-3 text-sm font-semibold text-foreground transition hover:bg-muted"
+                                        >
+                                            Sign In
+                                        </Link>
+                                    </SheetClose>
+
+                                    <SheetClose asChild>
+                                        <Link
+                                            to="/about"
+                                            className="inline-flex items-center justify-center rounded-xl bg-accent px-4 py-3 text-sm font-semibold text-accent-foreground shadow-sm shadow-accent/20 transition hover:opacity-90"
+                                        >
+                                            Sign Up
+                                        </Link>
+                                    </SheetClose>
+                                </div>
+                            </div>
+                        </SheetContent>
+                    </Sheet>
+                </div>
 
             </div>
         </header>
