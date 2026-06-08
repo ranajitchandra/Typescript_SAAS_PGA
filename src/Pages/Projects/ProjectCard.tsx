@@ -23,7 +23,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <article className="project-card group relative flex flex-col overflow-hidden rounded-3xl border bg-card text-card-foreground shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
             {/* Animated gradient ring on hover */}
             <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                <div className="absolute -inset-px rounded-3xl bg-gradient-to-r from-primary/40 via-accent/40 to-primary/40 blur-sm" />
+                <div className="absolute -inset-px rounded-3xl bg-linear-to-r from-primary/40 via-accent/40 to-primary/40 blur-sm" />
             </div>
 
             <div className="relative">
