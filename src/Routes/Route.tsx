@@ -42,12 +42,12 @@ export const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: "books",
-                element: <BooksPage />,
-            },
-            {
                 path: "projects",
                 element: <ProjectsPage />,
+            },
+            {
+                path: "books",
+                element: <BooksPage />,
             },
             {
                 path: "blog",
