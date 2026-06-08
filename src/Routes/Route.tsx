@@ -4,6 +4,7 @@ import AboutPage from "@/Pages/About/AboutPage";
 import BlogDetailsPage from "@/Pages/Blog/BlogDetails/BlogDetailsPage";
 import BlogPage from "@/Pages/Blog/BlogPage";
 import CreateBlog from "@/Pages/Blog/CreateBlog/CreateBlog";
+import BooksPage from "@/Pages/Books/BooksPage";
 import Home from "@/Pages/Home/HomePage";
 import { createBrowserRouter } from "react-router";
 
@@ -17,8 +18,8 @@ export const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: "about",
-                element: <AboutPage />,
+                path: "books",
+                element: <BooksPage />,
             },
             {
                 path: "blog",
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
             {
                 path: "/blog/create",
                 element: <CreateBlog />,
+            },
+            {
+                path: "about",
+                element: <AboutPage />,
             },
         ]
     }

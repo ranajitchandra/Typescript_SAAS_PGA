@@ -15,6 +15,7 @@ import {
 
 const navLinks = [
     { to: "/", label: "Home" },
+    { to: "/books", label: "Book Market" },
     { to: "/blog", label: "Blog" },
     { to: "/about", label: "About" },
 ];
@@ -36,6 +37,7 @@ const getMobileNavLinkClass = ({ isActive }: { isActive: boolean }) =>
     ].join(" ");
 
 export default function Header() {
+
     const [isDarkMode, setIsDarkMode] = useState(() => {
         if (typeof window === "undefined") {
             return false;
@@ -93,15 +95,6 @@ export default function Header() {
                                 className="rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground"
                             >
                                 Sign In
-                            </Link>
-                        </li>
-
-                        <li>
-                            <Link
-                                to="/about"
-                                className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground shadow-sm shadow-accent/20 transition hover:opacity-90"
-                            >
-                                Sign Up
                             </Link>
                         </li>
                         <li>
@@ -195,15 +188,6 @@ export default function Header() {
                                             className="inline-flex items-center justify-center rounded-xl border bg-background px-4 py-3 text-sm font-semibold text-foreground transition hover:bg-muted"
                                         >
                                             Sign In
-                                        </Link>
-                                    </SheetClose>
-
-                                    <SheetClose asChild>
-                                        <Link
-                                            to="/about"
-                                            className="inline-flex items-center justify-center rounded-xl bg-accent px-4 py-3 text-sm font-semibold text-accent-foreground shadow-sm shadow-accent/20 transition hover:opacity-90"
-                                        >
-                                            Sign Up
                                         </Link>
                                     </SheetClose>
                                 </div>
