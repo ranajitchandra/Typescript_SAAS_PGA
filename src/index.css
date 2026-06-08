@@ -152,3 +152,175 @@
         @apply font-sans;
     }
 }
+
+/* =====================================================
+   Projects Page — Global Theme
+   ===================================================== */
+
+@layer components {
+
+    /* Card fade-in / lift on mount */
+    .project-card-animate {
+        opacity: 0;
+        transform: translateY(24px);
+        animation: project-card-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes project-card-rise {
+        from {
+            opacity: 0;
+            transform: translateY(24px) scale(0.97);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    /* Card: subtle border glow that intensifies on hover */
+    .project-card {
+        position: relative;
+        isolation: isolate;
+    }
+
+    .project-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1px;
+        background: linear-gradient(
+            135deg,
+            transparent 0%,
+            color-mix(in srgb, var(--primary) 0%) 40%,
+            color-mix(in srgb, var(--accent) 0%) 60%,
+            transparent 100%
+        );
+        -webkit-mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+                mask-composite: exclude;
+        transition: background 0.5s ease;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .project-card:hover::before {
+        background: linear-gradient(
+            135deg,
+            color-mix(in srgb, var(--primary) 60%) 0%,
+            color-mix(in srgb, var(--accent) 60%) 50%,
+            color-mix(in srgb, var(--primary) 60%) 100%
+        );
+    }
+
+    /* Tech stack badge: shimmer on hover */
+    .project-tech-badge {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .project-tech-badge::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            100deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.35) 50%,
+            transparent 70%
+        );
+        transform: translateX(-100%);
+        transition: transform 0.6s ease;
+    }
+
+    .project-tech-badge:hover::after {
+        transform: translateX(100%);
+    }
+
+    /* Action buttons: ripple-ish glow on hover */
+    .project-btn {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .project-btn::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+            circle at var(--x, 50%) var(--y, 50%),
+            rgba(255, 255, 255, 0.25) 0%,
+            transparent 60%
+        );
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+    }
+
+    .project-btn:hover::before {
+        opacity: 1;
+    }
+
+    /* Primary action button — strong glow on hover */
+    .project-btn-primary {
+        box-shadow: 0 4px 14px -2px color-mix(in srgb, var(--primary) 30%);
+    }
+
+    .project-btn-primary:hover {
+        box-shadow: 0 8px 24px -4px color-mix(in srgb, var(--primary) 50%);
+        transform: translateY(-1px);
+    }
+
+    /* Hero gradient orb animations */
+    .project-hero {
+        animation: project-hero-fade 0.9s ease-out;
+    }
+
+    @keyframes project-hero-fade {
+        from {
+            opacity: 0;
+            transform: translateY(-12px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Floating decorative orbs */
+    .project-hero > div[class*="blur-3xl"] {
+        animation: project-orb-float 12s ease-in-out infinite alternate;
+    }
+
+    .project-hero > div[class*="blur-3xl"]:nth-child(2) {
+        animation-delay: -6s;
+        animation-duration: 14s;
+    }
+
+    @keyframes project-orb-float {
+        from {
+            transform: translate(0, 0) scale(1);
+        }
+        to {
+            transform: translate(20px, -20px) scale(1.1);
+        }
+    }
+
+    /* Respect reduced motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+        .project-card-animate,
+        .project-hero,
+        .project-hero > div[class*="blur-3xl"] {
+            animation: none !important;
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        .project-tech-badge::after,
+        .project-btn::before {
+            transition: none !important;
+        }
+    }
+}

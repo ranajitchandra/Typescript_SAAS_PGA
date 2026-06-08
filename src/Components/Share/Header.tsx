@@ -15,6 +15,7 @@ import {
 
 const navLinks = [
     { to: "/", label: "Home" },
+    { to: "/projects", label: "Projects" },
     { to: "/books", label: "Book Market" },
     { to: "/blog", label: "Blog" },
     { to: "/about", label: "About" },
