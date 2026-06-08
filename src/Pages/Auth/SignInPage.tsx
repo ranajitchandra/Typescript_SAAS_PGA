@@ -123,7 +123,7 @@ export default function SignInPage() {
 
                 <p className="mt-6 text-center text-sm text-muted-foreground">
                     New to BookSealer?{" "}
-                    <Link className="font-semibold text-primary hover:underline" to="/sign-up">
+                    <Link className="font-semibold text-primary hover:underline" to="/auth/sign-up">
                         Create an account
                     </Link>
                 </p>

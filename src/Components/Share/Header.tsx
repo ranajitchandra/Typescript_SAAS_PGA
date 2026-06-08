@@ -91,7 +91,7 @@ export default function Header() {
                     <ul className="flex items-center gap-3">
                         <li>
                             <Link
-                                to="/sign-in"
+                                to="/auth/sign-in"
                                 className="rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground"
                             >
                                 Sign In
@@ -99,7 +99,7 @@ export default function Header() {
                         </li>
                         <li>
                             <Link
-                                to="/sign-up"
+                                to="/auth/sign-up"
                                 className="rounded-full bg-accent px-4 py-2 text-sm font-bold text-accent-foreground shadow-sm shadow-accent/20 transition hover:bg-accent/90"
                             >
                                 Sign Up
@@ -202,7 +202,7 @@ export default function Header() {
                                 <div className="grid gap-3">
                                     <SheetClose asChild>
                                         <Link
-                                            to="/sign-in"
+                                            to="/auth/sign-in"
                                             className="inline-flex items-center justify-center rounded-xl border bg-background px-4 py-3 text-sm font-semibold text-foreground transition hover:bg-muted"
                                         >
                                             Sign In
@@ -210,7 +210,7 @@ export default function Header() {
                                     </SheetClose>
                                     <SheetClose asChild>
                                         <Link
-                                            to="/sign-up"
+                                            to="/auth/sign-up"
                                             className="inline-flex items-center justify-center rounded-xl bg-accent px-4 py-3 text-sm font-bold text-accent-foreground transition hover:bg-accent/90"
                                         >
                                             Sign Up

@@ -1,4 +1,5 @@
 
+import AuthLayout from "@/Layouts/AuthLayout";
 import MainLayout from "@/Layouts/MainLayout";
 import AboutPage from "@/Pages/About/AboutPage";
 import ForgotPasswordPage from "@/Pages/Auth/ForgotPasswordPage";
@@ -13,6 +14,24 @@ import Home from "@/Pages/Home/HomePage";
 import { createBrowserRouter } from "react-router";
 
 export const router = createBrowserRouter([
+    {
+        path: "/auth",
+        element: <AuthLayout />,
+        children: [
+            {
+                path: "sign-in",
+                element: <SignInPage />,
+            },
+            {
+                path: "sign-up",
+                element: <SignUpPage />,
+            },
+            {
+                path: "forgot-password",
+                element: <ForgotPasswordPage />,
+            },
+        ],
+    },
     {
         path: "/",
         element: <MainLayout />,
@@ -40,18 +59,6 @@ export const router = createBrowserRouter([
             {
                 path: "about",
                 element: <AboutPage />,
-            },
-            {
-                path: "sign-in",
-                element: <SignInPage />,
-            },
-            {
-                path: "sign-up",
-                element: <SignUpPage />,
-            },
-            {
-                path: "forgot-password",
-                element: <ForgotPasswordPage />,
             },
             {
                 path: "profile",

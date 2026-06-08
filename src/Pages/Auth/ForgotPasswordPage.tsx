@@ -180,7 +180,7 @@ export default function ForgotPasswordPage() {
                             </p>
                             <Link
                                 className="mt-5 inline-flex h-11 w-full items-center justify-center rounded-xl bg-primary px-5 text-sm font-bold text-primary-foreground"
-                                to="/sign-in"
+                                to="/auth/sign-in"
                             >
                                 Back to Sign In
                             </Link>
