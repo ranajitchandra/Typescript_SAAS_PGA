@@ -23,14 +23,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <article className="project-card group relative flex flex-col overflow-hidden rounded-3xl border bg-card text-card-foreground shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10">
             {/* Animated gradient ring on hover */}
             <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                <div className="absolute -inset-px rounded-3xl bg-gradient-to-r from-primary/40 via-accent/40 to-primary/40 blur-sm" />
+                <div className="absolute -inset-px rounded-3xl bg-linear-to-r from-primary/40 via-accent/40 to-primary/40 blur-sm" />
             </div>
 
             <div className="relative">
                 {/* Image wrapper with skeleton */}
                 <div className="relative h-56 overflow-hidden bg-muted">
                     {!imageLoaded && (
-                        <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-muted via-muted-foreground/10 to-muted" />
+                        <div className="absolute inset-0 animate-pulse bg-linear-to-r from-muted via-muted-foreground/10 to-muted" />
                     )}
 
                     <img
@@ -44,7 +44,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     />
 
                     {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-90" />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-90" />
 
                     {/* Top badges */}
                     <div className="absolute left-4 right-4 top-4 flex items-start justify-between gap-2">

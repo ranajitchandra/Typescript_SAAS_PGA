@@ -1,7 +1,7 @@
 
 import { BookOpenCheck, MapPin, Sparkles } from "lucide-react";
 
-export default function Banner() {
+export default function BookBanner() {
     return (
         <div className="space-y-12">
             <section className="relative overflow-hidden rounded-3xl border bg-primary text-primary-foreground shadow-2xl shadow-primary/15">
