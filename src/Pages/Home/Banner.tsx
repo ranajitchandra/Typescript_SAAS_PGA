@@ -1,7 +1,7 @@
-import PostList from "./PostList";
+
 import { BookOpenCheck, MapPin, Sparkles } from "lucide-react";
 
-export default function Post() {
+export default function Banner() {
     return (
         <div className="space-y-12">
             <section className="relative overflow-hidden rounded-3xl border bg-primary text-primary-foreground shadow-2xl shadow-primary/15">
@@ -11,7 +11,7 @@ export default function Post() {
                         alt="Bookshelves in a warm book shop"
                         className="h-full w-full object-cover opacity-35"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/85 to-primary/45" />
+                    <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/85 to-primary/45" />
                 </div>
 
                 <div className="relative grid gap-8 px-6 py-12 md:grid-cols-[1.1fr_0.9fr] md:px-10 md:py-16">
@@ -54,7 +54,6 @@ export default function Post() {
                 </div>
             </section>
 
-            <PostList />
         </div>
-    );
+    )
 }

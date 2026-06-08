@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { bookListings } from "@/Mock_Data/Data";
-import PostCard from "./PostCard";
+import PostCard from "../Home/PostCard";
 
 const PAGE_SIZE = 9;
 
@@ -9,7 +9,7 @@ const getBookListings = async ({ pageParam = 0 }: { pageParam?: number }) => {
     return bookListings.slice(pageParam, pageParam + PAGE_SIZE);
 };
 
-export default function PostList() {
+export default function BookPostList() {
     const {
         data,
         fetchNextPage,

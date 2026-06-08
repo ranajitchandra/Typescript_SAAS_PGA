@@ -1,11 +1,11 @@
+import Banner from "./Banner";
 
-import Post from "./Post";
 
 export default function HomePage() {
 
     return (
         <div>
-            <Post />
+            <Banner />
         </div>
     )
 }
