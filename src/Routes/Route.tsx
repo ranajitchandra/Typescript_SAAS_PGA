@@ -1,6 +1,10 @@
 
 import MainLayout from "@/Layouts/MainLayout";
 import AboutPage from "@/Pages/About/AboutPage";
+import ForgotPasswordPage from "@/Pages/Auth/ForgotPasswordPage";
+import ProfilePage from "@/Pages/Auth/ProfilePage";
+import SignInPage from "@/Pages/Auth/SignInPage";
+import SignUpPage from "@/Pages/Auth/SignUpPage";
 import BlogDetailsPage from "@/Pages/Blog/BlogDetails/BlogDetailsPage";
 import BlogPage from "@/Pages/Blog/BlogPage";
 import CreateBlog from "@/Pages/Blog/CreateBlog/CreateBlog";
@@ -36,6 +40,22 @@ export const router = createBrowserRouter([
             {
                 path: "about",
                 element: <AboutPage />,
+            },
+            {
+                path: "sign-in",
+                element: <SignInPage />,
+            },
+            {
+                path: "sign-up",
+                element: <SignUpPage />,
+            },
+            {
+                path: "forgot-password",
+                element: <ForgotPasswordPage />,
+            },
+            {
+                path: "profile",
+                element: <ProfilePage />,
             },
         ]
     }

@@ -1,6 +1,6 @@
 // src/components/shared/Header.tsx
 
-import { BookOpen, Menu, Moon, Sun } from "lucide-react";
+import { BookOpen, Menu, Moon, Sun, UserRound } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
 import {
@@ -91,10 +91,28 @@ export default function Header() {
                     <ul className="flex items-center gap-3">
                         <li>
                             <Link
-                                to="/"
+                                to="/sign-in"
                                 className="rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-foreground"
                             >
                                 Sign In
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/sign-up"
+                                className="rounded-full bg-accent px-4 py-2 text-sm font-bold text-accent-foreground shadow-sm shadow-accent/20 transition hover:bg-accent/90"
+                            >
+                                Sign Up
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/profile"
+                                className="inline-flex h-10 w-10 items-center justify-center rounded-full border bg-card text-foreground shadow-sm transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                                aria-label="Open profile"
+                                title="Profile"
+                            >
+                                <UserRound className="h-4 w-4" />
                             </Link>
                         </li>
                         <li>
@@ -184,10 +202,27 @@ export default function Header() {
                                 <div className="grid gap-3">
                                     <SheetClose asChild>
                                         <Link
-                                            to="/"
+                                            to="/sign-in"
                                             className="inline-flex items-center justify-center rounded-xl border bg-background px-4 py-3 text-sm font-semibold text-foreground transition hover:bg-muted"
                                         >
                                             Sign In
+                                        </Link>
+                                    </SheetClose>
+                                    <SheetClose asChild>
+                                        <Link
+                                            to="/sign-up"
+                                            className="inline-flex items-center justify-center rounded-xl bg-accent px-4 py-3 text-sm font-bold text-accent-foreground transition hover:bg-accent/90"
+                                        >
+                                            Sign Up
+                                        </Link>
+                                    </SheetClose>
+                                    <SheetClose asChild>
+                                        <Link
+                                            to="/profile"
+                                            className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
+                                        >
+                                            <UserRound className="h-4 w-4" />
+                                            Profile
                                         </Link>
                                     </SheetClose>
                                 </div>
