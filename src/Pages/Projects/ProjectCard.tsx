@@ -30,7 +30,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 {/* Image wrapper with skeleton */}
                 <div className="relative h-56 overflow-hidden bg-muted">
                     {!imageLoaded && (
-                        <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-muted via-muted-foreground/10 to-muted" />
+                        <div className="absolute inset-0 animate-pulse bg-linear-to-r from-muted via-muted-foreground/10 to-muted" />
                     )}
 
                     <img
