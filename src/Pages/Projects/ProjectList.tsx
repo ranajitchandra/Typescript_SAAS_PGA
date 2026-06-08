@@ -32,7 +32,7 @@ export default function ProjectList() {
     return (
         <section className="space-y-10">
             {/* Hero header */}
-            <div className="project-hero relative overflow-hidden rounded-3xl border bg-gradient-to-br from-primary/10 via-accent/10 to-primary/5 p-8 sm:p-12">
+            <div className="project-hero relative overflow-hidden rounded-3xl border bg-linear-to-br from-primary/10 via-accent/10 to-primary/5 p-8 sm:p-12">
                 <div className="absolute -right-12 -top-12 h-48 w-48 rounded-full bg-accent/20 blur-3xl" />
                 <div className="absolute -bottom-12 -left-12 h-48 w-48 rounded-full bg-primary/20 blur-3xl" />
 
@@ -44,7 +44,7 @@ export default function ProjectList() {
 
                     <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
                         Featured{" "}
-                        <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                        <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
                             Projects
                         </span>
                     </h1>

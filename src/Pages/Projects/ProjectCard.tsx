@@ -44,7 +44,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     />
 
                     {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-90" />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-90" />
 
                     {/* Top badges */}
                     <div className="absolute left-4 right-4 top-4 flex items-start justify-between gap-2">
