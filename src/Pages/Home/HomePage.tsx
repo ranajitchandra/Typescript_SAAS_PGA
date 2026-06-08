@@ -1,9 +1,10 @@
+import BookBanner from "../Books/BookBanner";
 
 export default function HomePage() {
 
     return (
         <div>
-            Home Page
+            <BookBanner />
         </div>
     )
 }
