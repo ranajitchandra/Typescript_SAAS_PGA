@@ -1,10 +1,12 @@
-import BookBanner from "../Books/BookBanner";
+
+import ProjectList from "../Projects/ProjectList";
 
 export default function HomePage() {
 
     return (
         <div>
-            <BookBanner />
+            <ProjectList />
+
         </div>
     )
 }

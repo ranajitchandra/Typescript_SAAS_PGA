@@ -19,11 +19,11 @@ const navLinks = [
         label: "Home",
         icon: Home,
     },
-    {
-        to: "/projects",
-        label: "Projects",
-        icon: FolderKanban,
-    },
+    // {
+    //     to: "/projects",
+    //     label: "Projects",
+    //     icon: FolderKanban,
+    // },
     {
         to: "/books",
         label: "Books",
