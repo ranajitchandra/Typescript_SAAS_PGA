@@ -6,7 +6,6 @@ import {
     Copy,
     Eye,
     Heart,
-    MessageCircle,
     Send,
     Share2,
     Sparkles,
@@ -14,8 +13,10 @@ import {
     ThumbsDown,
 } from "lucide-react";
 import { blogs } from "@/Mock_Data/Data";
-import type { Comment as BlogComment, Review } from "@/types/BlogType";
+import type { Review } from "@/types/BlogType";
 import ImageSlider from "./ImageSlider";
+import ReviewCard from "./ReviewCard";
+import StatCard from "./StatCard";
 
 const starValues = [1, 2, 3, 4, 5];
 
@@ -26,9 +27,7 @@ export default function BlogDetails() {
 
     const [selectedRating, setSelectedRating] = useState(5);
     const [reviewText, setReviewText] = useState("");
-    const [commentText, setCommentText] = useState("");
     const [localReviews, setLocalReviews] = useState<Review[]>([]);
-    const [localComments, setLocalComments] = useState<BlogComment[]>([]);
 
     if (!blog) {
         return (
@@ -41,7 +40,6 @@ export default function BlogDetails() {
     }
 
     const reviews = [...localReviews, ...blog.reviews];
-    const comments = [...localComments, ...blog.comments];
 
     const averageRating = useMemo(() => {
         const totalScore =
@@ -153,7 +151,7 @@ export default function BlogDetails() {
                 </div>
 
                 <article className="mt-12 max-w-5xl mx-auto">
-                    <div className="space-y-6 tex-base md:text-lg leading-6 md:leading-9 text-muted-foreground">
+                    <div className="space-y-6 tex-base md:text-lg leading- md:leading-9 text-muted-foreground">
                         <p>{blog.content}</p>
                         <p>
                             This article explores modern techniques, best
@@ -390,67 +388,6 @@ export default function BlogDetails() {
                 </div>
             </div>
         </section>
-    );
-}
-
-function StatCard({ icon, label, value }: {
-    icon: React.ReactNode;
-    label: string;
-    value: string;
-}) {
-    return (
-        <div className="flex items-center gap-4 text-card-foreground">
-            <div className="hidden h-14 w-14 sm:flex items-center justify-center rounded-2xl sm:bg-accent/15 text-accent">
-                {icon}
-            </div>
-            <div>
-                <p className="text-xl font-bold text-card-foreground">{value}</p>
-                <p className="text-sm text-muted-foreground">{label}</p>
-            </div>
-        </div>
-    );
-}
-
-function ReviewCard({ review }: { review: Review }) {
-    return (
-        <div className="rounded-2xl border border-accent/15 bg-background p-5">
-            <div className="flex items-start gap-4">
-                <img
-                    src={review.avatar}
-                    alt={review.user}
-                    className="h-12 w-12 rounded-full object-cover"
-                />
-
-                <div className="min-w-0 flex-1">
-                    <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-                        <div>
-                            <h3 className="font-semibold text-foreground">
-                                {review.user}
-                            </h3>
-                            <p className="text-xs text-muted-foreground">
-                                {review.date}
-                            </p>
-                        </div>
-
-                        <div className="flex items-center gap-1 text-accent">
-                            {starValues.map((star) => (
-                                <Star
-                                    key={star}
-                                    className={`h-4 w-4 ${star <= Math.round(review.rating)
-                                        ? "fill-current"
-                                        : ""
-                                        }`}
-                                />
-                            ))}
-                        </div>
-                    </div>
-
-                    <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                        {review.review}
-                    </p>
-                </div>
-            </div>
-        </div>
     );
 }
 
