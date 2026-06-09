@@ -11,14 +11,14 @@ export default function ProfilePage() {
     return (
         <section className="space-y-8 py-8">
             <div className="rounded-3xl border bg-primary p-6 text-primary-foreground shadow-2xl shadow-primary/15 md:p-8">
-                <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-                    <div className="flex items-center gap-5">
-                        <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-primary-foreground/12">
+                <div className="flex flex-col gap-2 md:flex-row items-center md:justify-between">
+                    <div className="flex flex-col sm:flex-row items-center sm:gap-5">
+                        <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary-foreground/12">
                             <UserRound className="h-10 w-10 text-accent" />
                         </div>
-                        <div>
+                        <div className="text-center sm:text-left sm:py-4">
                             <p className="text-sm font-semibold text-primary-foreground/75">Marketplace profile</p>
-                            <h1 className="mt-1 text-3xl font-bold md:text-4xl">Ranajit Book Seller</h1>
+                            <h1 className="mt-1 text-3xl font-bold md:text-4xl">Jhon Book Seller</h1>
                             <p className="mt-2 text-sm text-primary-foreground/75">Reader, seller, and trusted local book collector.</p>
                         </div>
                     </div>
