@@ -117,7 +117,7 @@ export const projects: Project[] = [
         description:
             "A design agency portfolio with smooth scroll animations, case study templates, and a built-in CMS for non-technical editors.",
         image:
-            "https://images.unsplash.com/photo-1561070791-2526d30994b8?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1589287707312-213624549c88?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         category: "Frontend",
         status: "Completed",
         stack: [
