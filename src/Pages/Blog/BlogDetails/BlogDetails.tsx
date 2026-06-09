@@ -82,25 +82,6 @@ export default function BlogDetails() {
         setSelectedRating(5);
     };
 
-    const handleCommentSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-
-        if (!commentText.trim()) {
-            return;
-        }
-
-        setLocalComments((currentComments) => [
-            {
-                id: Date.now(),
-                user: "Guest Reader",
-                avatar: "https://i.pravatar.cc/150?img=64",
-                comment: commentText.trim(),
-                date: "Just now",
-            },
-            ...currentComments,
-        ]);
-        setCommentText("");
-    };
 
     return (
         <section className="w-full">
@@ -110,10 +91,10 @@ export default function BlogDetails() {
                         <img
                             src={blog.featuredImage}
                             alt={blog.title}
-                            className="h-[300px] w-full object-cover opacity-80 md:h-[520px]"
+                            className="h-75 w-full object-cover opacity-80 md:h-130"
                         />
 
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/45 to-transparent" />
+                        <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/45 to-transparent" />
 
                         <div className="absolute inset-x-0 bottom-0 p-6 md:p-10">
                             <span className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground">
@@ -171,8 +152,8 @@ export default function BlogDetails() {
                     <ImageSlider images={blog.images} />
                 </div>
 
-                <article className="mx-auto mt-12 max-w-5xl">
-                    <div className="space-y-6 text-lg leading-9 text-muted-foreground">
+                <article className="mt-12 max-w-5xl mx-auto">
+                    <div className="space-y-6 tex-base md:text-lg leading-6 md:leading-9 text-muted-foreground">
                         <p>{blog.content}</p>
                         <p>
                             This article explores modern techniques, best
