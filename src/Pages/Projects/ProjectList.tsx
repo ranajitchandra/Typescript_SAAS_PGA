@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Filter, LayoutGrid, Search, Sparkles } from "lucide-react";
 import ProjectCard from "./ProjectCard";
 import { projects } from "@/Mock_Data/projects";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/Components/ui/select";
 
 export default function ProjectList() {
     const [query, setQuery] = useState("");
@@ -32,7 +33,7 @@ export default function ProjectList() {
     return (
         <section className="space-y-10">
             {/* Hero header */}
-            <div className="project-hero relative overflow-hidden rounded-3xl border bg-linear-to-br from-primary/10 via-accent/10 to-primary/5 p-8 sm:p-12">
+            <div className="project-hero relative overflow-hidden rounded-3xl border bg-linear-to-br from-primary/10 via-accent/10 to-primary/5 p-5 lg:p-12">
                 <div className="absolute -right-12 -top-12 h-48 w-48 rounded-full bg-accent/20 blur-3xl" />
                 <div className="absolute -bottom-12 -left-12 h-48 w-48 rounded-full bg-primary/20 blur-3xl" />
 
@@ -42,7 +43,7 @@ export default function ProjectList() {
                         Portfolio
                     </span>
 
-                    <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
+                    <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
                         Featured{" "}
                         <span className="bg-linear-to-r from-primary to-accent bg-clip-text text-transparent">
                             Projects
@@ -66,25 +67,26 @@ export default function ProjectList() {
                         Filter:
                     </span>
 
-                    {categories.map((category) => {
-                        const isActive = activeCategory === category;
+                    <Select
+                        value={activeCategory}
+                        onValueChange={setActiveCategory}
+                    >
+                        <SelectTrigger className="w-30">
+                            <SelectValue placeholder="Select category" />
+                        </SelectTrigger>
 
-                        return (
-                            <button
-                                key={category}
-                                type="button"
-                                onClick={() => setActiveCategory(category)}
-                                className={[
-                                    "rounded-full px-4 py-1.5 text-sm font-semibold transition-all",
-                                    isActive
-                                        ? "bg-primary text-primary-foreground shadow-md shadow-primary/20"
-                                        : "border bg-card text-muted-foreground hover:border-foreground/30 hover:text-foreground",
-                                ].join(" ")}
-                            >
-                                {category}
-                            </button>
-                        );
-                    })}
+                        <SelectContent className="min-w-30 p-1">
+                            {categories.map((category) => (
+                                <SelectItem
+                                    key={category}
+                                    value={category}
+                                    className="cursor-pointer"
+                                >
+                                    {category}
+                                </SelectItem>
+                            ))}
+                        </SelectContent>
+                    </Select>
                 </div>
 
                 <div className="relative w-full sm:w-72">

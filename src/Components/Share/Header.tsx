@@ -1,6 +1,6 @@
 // src/components/shared/Header.tsx
 
-import { BookOpen, Menu, Moon, Sun, UserRound } from "lucide-react";
+import { BookOpen, FolderKanban, Home, Info, Menu, Moon, Newspaper, Sun, UserRound } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
 import {
@@ -14,29 +14,40 @@ import {
 } from "@/Components/ui/sheet";
 
 const navLinks = [
-    { to: "/", label: "Home" },
-    { to: "/projects", label: "Projects" },
-    { to: "/books", label: "Book Market" },
-    { to: "/blog", label: "Blog" },
-    { to: "/about", label: "About" },
+    {
+        to: "/",
+        label: "Home",
+        icon: Home,
+    },
+    {
+        to: "/projects",
+        label: "Projects",
+        icon: FolderKanban,
+    },
+    {
+        to: "/books",
+        label: "Books",
+        icon: BookOpen,
+    },
+    {
+        to: "/blog",
+        label: "Blog",
+        icon: Newspaper,
+    },
+    {
+        to: "/about",
+        label: "About",
+        icon: Info,
+    },
 ];
 
 const getNavLinkClass = ({ isActive }: { isActive: boolean }) =>
     [
-        "rounded-full px-4 py-2 text-sm font-medium transition-all",
+        "rounded-full px-4 py-2 text-sm font-medium transition-all flex gap-3 items-center",
         isActive
             ? "bg-primary text-primary-foreground shadow-sm shadow-primary/20"
             : "text-muted-foreground hover:bg-muted hover:text-foreground",
     ].join(" ");
-
-const getMobileNavLinkClass = ({ isActive }: { isActive: boolean }) =>
-    [
-        "flex items-center rounded-xl px-4 py-3 text-sm sm:text-base font-semibold transition-all duration-200 w-full",
-        isActive
-            ? "bg-primary text-primary-foreground shadow-md border-l-4 border-accent"
-            : "text-muted-foreground hover:bg-muted hover:text-foreground",
-    ].join(" ");
-
 
 export default function Header() {
 
@@ -75,18 +86,23 @@ export default function Header() {
                 </Link>
 
                 <nav className="hidden lg:block">
-                    <ul className="flex items-center gap-2 rounded-full border bg-card py-1 shadow-sm">
-                        {navLinks.map((item) => (
-                            <li key={item.to}>
-                                <NavLink
-                                    to={item.to}
-                                    end={item.to === "/"}
-                                    className={getNavLinkClass}
-                                >
-                                    {item.label}
-                                </NavLink>
-                            </li>
-                        ))}
+                    <ul className="flex items-center gap-2 rounded-full border bg-card p-1 shadow-sm">
+                        {navLinks.map((item) => {
+                            const Icon = item.icon;
+                            return (
+                                <li key={item.to}>
+                                    <NavLink
+                                        to={item.to}
+                                        end={item.to === "/"}
+                                        className={getNavLinkClass}
+                                    >
+                                        <Icon className="h-5 w-5 shrink-0" />
+                                        {item.label}
+                                    </NavLink>
+                                </li>
+                            )
+                        }
+                        )}
                     </ul>
                 </nav>
                 <nav className="hidden lg:block">
@@ -99,14 +115,14 @@ export default function Header() {
                                 Sign In
                             </Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link
-                                to="/auth/sign-up"
+                                to="/"
                                 className="rounded-full bg-accent px-4 py-2 text-sm font-bold text-accent-foreground shadow-sm shadow-accent/20 transition hover:bg-accent/90"
                             >
-                                Sign Up
+                                C-Panel
                             </Link>
-                        </li>
+                        </li> */}
                         <li>
                             <Link
                                 to="/profile"
@@ -174,24 +190,29 @@ export default function Header() {
                             <div className="mt-8 flex flex-col gap-6">
                                 <nav>
                                     <ul className="space-y-3 ">
-                                        {navLinks.map((item) => (
-                                            <li key={item.to} className="w-full">
-                                                <SheetClose asChild>
-                                                    <NavLink
-                                                        to={item.to}
-                                                        end={item.to === "/"}
-                                                    >
-                                                        {({ isActive }) => (
-                                                            <div
-                                                                className={`flex items-center rounded-xl px-4 py-3 text-sm sm:text-base font-semibold transition-all duration-200 w-full ${ isActive ? "bg-primary text-primary-foreground" : "text-primary bg-primary/20 hover:bg-muted hover:text-foreground"}`}
-                                                            >
-                                                                {item.label}
-                                                            </div>
-                                                        )}
-                                                    </NavLink>
-                                                </SheetClose>
-                                            </li>
-                                        ))}
+                                        {navLinks.map((item) => {
+                                            const Icon = item.icon;
+                                            return (
+                                                <li key={item.to} className="w-full">
+                                                    <SheetClose asChild>
+                                                        <NavLink
+                                                            to={item.to}
+                                                            end={item.to === "/"}
+                                                        >
+                                                            {({ isActive }) => (
+                                                                <div
+                                                                    className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm sm:text-base font-semibold transition-all duration-200 w-full ${isActive ? "bg-primary text-primary-foreground" : "text-primary bg-primary/20 hover:bg-muted hover:text-foreground"}`}
+                                                                >
+                                                                    <Icon className="h-5 w-5 shrink-0" />
+                                                                    {item.label}
+                                                                </div>
+                                                            )}
+                                                        </NavLink>
+                                                    </SheetClose>
+                                                </li>
+                                            )
+                                        }
+                                        )}
                                     </ul>
                                 </nav>
 
@@ -215,10 +236,10 @@ export default function Header() {
                                     </SheetClose>
                                     <SheetClose asChild>
                                         <Link
-                                            to="/auth/sign-up"
+                                            to="/"
                                             className="inline-flex items-center justify-center rounded-xl bg-accent px-4 py-3 text-sm font-bold text-accent-foreground transition hover:bg-accent/90"
                                         >
-                                            Sign Up
+                                            Dashboard
                                         </Link>
                                     </SheetClose>
                                     <SheetClose asChild>

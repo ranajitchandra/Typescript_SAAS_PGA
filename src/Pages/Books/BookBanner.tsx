@@ -21,7 +21,7 @@ export default function BookBanner() {
                             Buy and sell books nearby
                         </div>
 
-                        <h1 className="mt-6 text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
+                        <h1 className="mt-6 text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-bold leading-tight">
                             Find your next favorite book from trusted local sellers.
                         </h1>
 
