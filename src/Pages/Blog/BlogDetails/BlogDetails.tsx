@@ -103,8 +103,8 @@ export default function BlogDetails() {
     };
 
     return (
-        <section className="bg-gradient-to-b from-secondary/70 via-background to-background">
-            <div className="mx-auto max-w-6xl px-4 py-10">
+        <section className="w-full">
+            <div className="max-w-6xl mx-auto">
                 <div className="overflow-hidden rounded-[2rem] bg-primary shadow-2xl shadow-primary/20">
                     <div className="relative">
                         <img
@@ -171,7 +171,7 @@ export default function BlogDetails() {
                     <ImageSlider images={blog.images} />
                 </div>
 
-                <article className="mx-auto mt-12 max-w-4xl">
+                <article className="mx-auto mt-12 max-w-5xl">
                     <div className="space-y-6 text-lg leading-9 text-muted-foreground">
                         <p>{blog.content}</p>
                         <p>
@@ -188,7 +188,7 @@ export default function BlogDetails() {
                     </div>
                 </article>
 
-                <div className="mt-12 grid gap-4 md:grid-cols-4">
+                <div className="mt-12 flex justify-between sm:justify-start gap-6 sm:items-center">
                     <StatCard
                         icon={<Heart className="h-7 w-7" />}
                         label="Likes"
@@ -204,21 +204,18 @@ export default function BlogDetails() {
                         label={`${blog.totalRatings + localReviews.length} Ratings`}
                         value={averageRating}
                     />
-                    <StatCard
-                        icon={<MessageCircle className="h-7 w-7" />}
-                        label="Comments"
-                        value={comments.length.toString()}
-                    />
+
                 </div>
 
-                <div className="mt-12 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-                    <section className="rounded-3xl border border-accent/20 bg-card p-6 text-card-foreground shadow-lg shadow-primary/5">
+                {/* Reviews Section */}
+                <div className="mt-12 grid gap-8 lg:grid-cols-[1fr]">
+                    <section className="rounded-3xl sm:border border-accent/20 bg-card sm:p-6 text-card-foreground shadow-lg shadow-primary/5">
                         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
                             <div>
                                 <p className="text-sm font-semibold uppercase tracking-wider text-accent">
                                     Reader Reviews
                                 </p>
-                                <h2 className="text-3xl font-bold text-card-foreground">
+                                <h2 className="text-2xl sm:text-3xl font-bold text-card-foreground">
                                     {averageRating} average rating
                                 </h2>
                             </div>
@@ -250,11 +247,10 @@ export default function BlogDetails() {
                                         aria-label={`${star} star rating`}
                                     >
                                         <Star
-                                            className={`h-7 w-7 ${
-                                                star <= selectedRating
-                                                    ? "fill-current"
-                                                    : ""
-                                            }`}
+                                            className={`h-7 w-7 ${star <= selectedRating
+                                                ? "fill-current"
+                                                : ""
+                                                }`}
                                         />
                                     </button>
                                 ))}
@@ -288,51 +284,6 @@ export default function BlogDetails() {
                         </div>
                     </section>
 
-                    <section className="rounded-3xl bg-primary p-6 text-primary-foreground shadow-2xl shadow-primary/20">
-                        <div className="flex items-center justify-between gap-4">
-                            <div>
-                                <p className="text-sm font-semibold uppercase tracking-wider text-accent">
-                                    Discussion
-                                </p>
-                                <h2 className="text-3xl font-bold">
-                                    {comments.length} comments
-                                </h2>
-                            </div>
-
-                            <MessageCircle className="h-10 w-10 text-accent" />
-                        </div>
-
-                        <form
-                            onSubmit={handleCommentSubmit}
-                            className="mt-6 rounded-2xl bg-primary-foreground/10 p-4"
-                        >
-                            <textarea
-                                value={commentText}
-                                onChange={(event) =>
-                                    setCommentText(event.target.value)
-                                }
-                                placeholder="Join the conversation..."
-                                className="min-h-28 w-full rounded-2xl border border-primary-foreground/15 bg-background px-4 py-3 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring focus:ring-4 focus:ring-ring/20"
-                            />
-
-                            <button
-                                type="submit"
-                                className="mt-4 inline-flex items-center gap-2 rounded-2xl bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground transition hover:opacity-90"
-                            >
-                                <Send className="h-4 w-4" />
-                                Add Comment
-                            </button>
-                        </form>
-
-                        <div className="mt-6 space-y-4">
-                            {comments.map((comment) => (
-                                <CommentCard
-                                    key={comment.id}
-                                    comment={comment}
-                                />
-                            ))}
-                        </div>
-                    </section>
                 </div>
 
                 <div className="mt-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
@@ -461,22 +412,20 @@ export default function BlogDetails() {
     );
 }
 
-function StatCard({
-    icon,
-    label,
-    value,
-}: {
+function StatCard({ icon, label, value }: {
     icon: React.ReactNode;
     label: string;
     value: string;
 }) {
     return (
-        <div className="rounded-3xl border border-accent/20 bg-card p-6 text-center text-card-foreground shadow-lg shadow-primary/5">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/15 text-accent">
+        <div className="flex items-center gap-4 text-card-foreground">
+            <div className="hidden h-14 w-14 sm:flex items-center justify-center rounded-2xl sm:bg-accent/15 text-accent">
                 {icon}
             </div>
-            <p className="mt-4 text-3xl font-bold text-card-foreground">{value}</p>
-            <p className="mt-1 text-sm text-muted-foreground">{label}</p>
+            <div>
+                <p className="text-xl font-bold text-card-foreground">{value}</p>
+                <p className="text-sm text-muted-foreground">{label}</p>
+            </div>
         </div>
     );
 }
@@ -506,11 +455,10 @@ function ReviewCard({ review }: { review: Review }) {
                             {starValues.map((star) => (
                                 <Star
                                     key={star}
-                                    className={`h-4 w-4 ${
-                                        star <= Math.round(review.rating)
-                                            ? "fill-current"
-                                            : ""
-                                    }`}
+                                    className={`h-4 w-4 ${star <= Math.round(review.rating)
+                                        ? "fill-current"
+                                        : ""
+                                        }`}
                                 />
                             ))}
                         </div>
@@ -525,29 +473,3 @@ function ReviewCard({ review }: { review: Review }) {
     );
 }
 
-function CommentCard({ comment }: { comment: BlogComment }) {
-    return (
-        <div className="rounded-2xl bg-primary-foreground/10 p-4">
-            <div className="flex gap-4">
-                <img
-                    src={comment.avatar}
-                    alt={comment.user}
-                    className="h-11 w-11 rounded-full object-cover"
-                />
-
-                <div className="min-w-0 flex-1">
-                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                        <h3 className="font-semibold">{comment.user}</h3>
-                        <span className="text-xs text-primary-foreground/55">
-                            {comment.date}
-                        </span>
-                    </div>
-
-                    <p className="mt-2 text-sm leading-6 text-primary-foreground/80">
-                        {comment.comment}
-                    </p>
-                </div>
-            </div>
-        </div>
-    );
-}
