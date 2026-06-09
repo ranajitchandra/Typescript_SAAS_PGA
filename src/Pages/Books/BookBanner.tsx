@@ -14,14 +14,14 @@ export default function BookBanner() {
                     <div className="absolute inset-0 bg-linear-to-r from-primary via-primary/85 to-primary/45" />
                 </div>
 
-                <div className="relative grid gap-8 px-6 py-12 md:grid-cols-[1.1fr_0.9fr] md:px-10 md:py-16">
+                <div className="relative grid gap-8 md:grid-cols-[1.1fr_0.9fr] px-5 py-12 md:px-10 md:py-16">
                     <div className="max-w-3xl">
                         <div className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground">
                             <Sparkles className="h-4 w-4" />
                             Buy and sell books nearby
                         </div>
 
-                        <h1 className="mt-6 text-4xl font-bold leading-tight md:text-6xl">
+                        <h1 className="mt-6 text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
                             Find your next favorite book from trusted local sellers.
                         </h1>
 
@@ -46,7 +46,7 @@ export default function BookBanner() {
                             <p className="text-sm font-medium text-primary-foreground/70">
                                 Marketplace vision
                             </p>
-                            <p className="mt-2 max-w-sm text-2xl font-bold">
+                            <p className="mt-2 max-w-sm text-lg md:text-xl lg:text-2xl font-bold">
                                 A friendly book sealer platform for students, readers, and collectors.
                             </p>
                         </div>
