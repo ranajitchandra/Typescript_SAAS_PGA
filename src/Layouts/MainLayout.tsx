@@ -9,7 +9,7 @@ export default function MainLayout() {
     return (
         <div className="min-h-screen bg-background text-foreground">
             <Header />
-            <main className="container mx-auto px-4 py-8">
+            <main className="container mx-auto p-5">
                 <Outlet />
             </main>
             <Footer />

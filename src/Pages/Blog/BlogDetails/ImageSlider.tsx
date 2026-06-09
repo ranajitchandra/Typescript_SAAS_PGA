@@ -23,7 +23,7 @@ export default function ImageSlider({
                 <SwiperSlide key={index}>
                     <img
                         src={img}
-                        className="h-80 w-full rounded-xl object-cover"
+                        className="h-auto w-full rounded-xl object-cover"
                     />
                 </SwiperSlide>
             ))}

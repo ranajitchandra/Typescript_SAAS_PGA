@@ -24,11 +24,11 @@ const features: Feature[] = [
 
 export default function About() {
     return (
-        <div className="min-h-screen bg-background text-foreground">
+        <div className="bg-background text-foreground space-y-12">
 
             {/* Hero */}
-            <section className="bg-primary py-20 text-center text-primary-foreground">
-                <h1 className="text-4xl font-bold">
+            <section className="bg-primary rounded-2xl py-20 text-center text-primary-foreground">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">
                     About Our Platform
                 </h1>
 
@@ -38,8 +38,8 @@ export default function About() {
             </section>
 
             {/* Features */}
-            <section className="mx-auto max-w-6xl px-6 py-16">
-                <div className="grid gap-6 md:grid-cols-3">
+            <section className=" w-full xl:max-w-6xl mx-auto">
+                <div className="grid gap-4 lg:gap-6 md:grid-cols-3">
                     {features.map((item) => (
                         <FeatureCard key={item.id} item={item} />
                     ))}
@@ -47,8 +47,8 @@ export default function About() {
             </section>
 
             {/* Story */}
-            <section className="bg-muted py-16 text-center">
-                <h2 className="text-3xl font-bold text-foreground">
+            <section className="rounded-2xl bg-muted px-5 py-16 text-center">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground">
                     Our Story
                 </h2>
 

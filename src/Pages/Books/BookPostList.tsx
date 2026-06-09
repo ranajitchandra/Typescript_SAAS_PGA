@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { bookListings } from "@/Mock_Data/Data";
+import { bookListings } from "@/Mock_Data/Blogs";
 import PostCard from "../Home/PostCard";
 
 const PAGE_SIZE = 9;
@@ -53,17 +53,14 @@ export default function BookPostList() {
 
     return (
         <section className="space-y-6">
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div className="w-full">
                 <div>
-                    <p className="text-sm font-semibold uppercase tracking-wider text-accent">
-                        Book marketplace
-                    </p>
                     <h2 className="text-3xl font-bold text-foreground">
                         Selling books now
                     </h2>
                 </div>
 
-                <p className="max-w-xl text-sm text-muted-foreground">
+                <p className="max-w-2xl text-sm text-muted-foreground">
                     Fresh local listings with seller info, pricing, location, and availability so buyers can decide quickly.
                 </p>
             </div>

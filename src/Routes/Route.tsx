@@ -11,7 +11,6 @@ import BlogPage from "@/Pages/Blog/BlogPage";
 import CreateBlog from "@/Pages/Blog/CreateBlog/CreateBlog";
 import BooksPage from "@/Pages/Books/BooksPage";
 import Home from "@/Pages/Home/HomePage";
-import ProjectsPage from "@/Pages/Projects/ProjectsPage";
 import { createBrowserRouter } from "react-router";
 
 export const router = createBrowserRouter([
@@ -41,10 +40,10 @@ export const router = createBrowserRouter([
                 index: true,
                 element: <Home />,
             },
-            {
-                path: "projects",
-                element: <ProjectsPage />,
-            },
+            // {
+            //     path: "projects",
+            //     element: <ProjectsPage />,
+            // },
             {
                 path: "books",
                 element: <BooksPage />,

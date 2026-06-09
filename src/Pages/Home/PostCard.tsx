@@ -79,7 +79,7 @@ export default function PostCard({ book }: PostCardProps) {
                             Price
                         </p>
                         <p className="text-2xl font-bold text-foreground">
-                            Tk {book.price.toLocaleString()}
+                            $ {book.price.toLocaleString()}
                         </p>
                     </div>
 
