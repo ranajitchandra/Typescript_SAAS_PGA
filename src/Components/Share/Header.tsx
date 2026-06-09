@@ -31,11 +31,12 @@ const getNavLinkClass = ({ isActive }: { isActive: boolean }) =>
 
 const getMobileNavLinkClass = ({ isActive }: { isActive: boolean }) =>
     [
-        "flex items-center rounded-xl px-4 py-3 text-base font-semibold transition",
+        "flex items-center rounded-xl px-4 py-3 text-sm sm:text-base font-semibold transition-all duration-200 w-full",
         isActive
-            ? "bg-primary text-primary-foreground shadow-sm shadow-primary/20"
-            : "bg-card text-muted-foreground hover:bg-muted hover:text-foreground",
+            ? "bg-primary text-primary-foreground shadow-md border-l-4 border-accent"
+            : "text-muted-foreground hover:bg-muted hover:text-foreground",
     ].join(" ");
+
 
 export default function Header() {
 
@@ -73,7 +74,7 @@ export default function Header() {
                     </span>
                 </Link>
 
-                <nav className="hidden md:block">
+                <nav className="hidden lg:block">
                     <ul className="flex items-center gap-2 rounded-full border bg-card py-1 shadow-sm">
                         {navLinks.map((item) => (
                             <li key={item.to}>
@@ -88,7 +89,7 @@ export default function Header() {
                         ))}
                     </ul>
                 </nav>
-                <nav className="hidden md:block">
+                <nav className="hidden lg:block">
                     <ul className="flex items-center gap-3">
                         <li>
                             <Link
@@ -134,7 +135,7 @@ export default function Header() {
                     </ul>
                 </nav>
 
-                <div className="flex items-center gap-2 md:hidden">
+                <div className="flex items-center gap-2 lg:hidden">
                     <button
                         type="button"
                         onClick={() => setIsDarkMode((current) => !current)}
@@ -160,7 +161,7 @@ export default function Header() {
                             </button>
                         </SheetTrigger>
 
-                        <SheetContent>
+                        <SheetContent className="w-70">
                             <SheetHeader>
                                 <SheetTitle>
                                     BookSealer
@@ -179,11 +180,14 @@ export default function Header() {
                                                     <NavLink
                                                         to={item.to}
                                                         end={item.to === "/"}
-                                                        className={({ isActive }) =>
-                                                            `${getMobileNavLinkClass({ isActive })} w-full block`
-                                                        }
                                                     >
-                                                        {item.label}
+                                                        {({ isActive }) => (
+                                                            <div
+                                                                className={`flex items-center rounded-xl px-4 py-3 text-sm sm:text-base font-semibold transition-all duration-200 w-full ${ isActive ? "bg-primary text-primary-foreground" : "text-primary bg-primary/20 hover:bg-muted hover:text-foreground"}`}
+                                                            >
+                                                                {item.label}
+                                                            </div>
+                                                        )}
                                                     </NavLink>
                                                 </SheetClose>
                                             </li>
