@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { bookListings } from "@/Mock_Data/Data";
+import { bookListings } from "@/Mock_Data/Blogs";
 import PostCard from "../Home/PostCard";
 
 const PAGE_SIZE = 9;

@@ -1,6 +1,6 @@
 // src/components/shared/Header.tsx
 
-import { BookOpen, FolderKanban, Home, Info, Menu, Moon, Newspaper, Sun, UserRound } from "lucide-react";
+import { BookOpen, Home, Info, Menu, Moon, Newspaper, Sun, UserRound } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
 import {
@@ -81,7 +81,7 @@ export default function Header() {
                         <BookOpen className="h-5 w-5" />
                     </span>
                     <span>
-                        BookSealer
+                        BOOKME
                     </span>
                 </Link>
 

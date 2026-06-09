@@ -74,7 +74,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {/* Body */}
             <div className="relative flex flex-1 flex-col gap-5 p-6">
                 <div>
-                    <h3 className="line-clamp-1 text-2xl font-bold tracking-tight text-card-foreground transition-colors group-hover:text-primary">
+                    <h3 className="line-clamp-1 text-xl md:text-2xl font-bold tracking-tight text-card-foreground transition-colors group-hover:text-primary">
                         {project.title}
                     </h3>
                     <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted-foreground">

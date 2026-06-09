@@ -1,5 +1,5 @@
 
-import { blogs } from "@/Mock_Data/Data";
+import { blogs } from "@/Mock_Data/Blogs";
 import { Link } from "react-router";
 import BlogCard from "./BlogCard";
 

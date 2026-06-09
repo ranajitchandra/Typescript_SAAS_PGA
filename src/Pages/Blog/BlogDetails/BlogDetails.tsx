@@ -12,7 +12,7 @@ import {
     Star,
     ThumbsDown,
 } from "lucide-react";
-import { blogs } from "@/Mock_Data/Data";
+import { blogs } from "@/Mock_Data/Blogs";
 import type { Review } from "@/types/BlogType";
 import ImageSlider from "./ImageSlider";
 import ReviewCard from "./ReviewCard";

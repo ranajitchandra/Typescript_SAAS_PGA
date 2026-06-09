@@ -1,0 +1,27 @@
+@keyframes testimonial-marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.testimonial-marquee {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.testimonial-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: testimonial-marquee 28s linear infinite;
+}
+
+.testimonial-marquee-reverse {
+    animation-direction: reverse;
+}
+
+.testimonial-marquee:hover .testimonial-marquee-track {
+    animation-play-state: paused;
+}
