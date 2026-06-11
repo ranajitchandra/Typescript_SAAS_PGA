@@ -9,7 +9,7 @@ const profileStats = [
 
 export default function ProfilePage() {
     return (
-        <section className="space-y-8 py-8">
+        <section className="max-w-6xl space-y-8 py-8">
             <div className="rounded-3xl border bg-primary p-6 text-primary-foreground shadow-2xl shadow-primary/15 md:p-8">
                 <div className="flex flex-col gap-2 md:flex-row items-center md:justify-between">
                     <div className="flex flex-col sm:flex-row items-center sm:gap-5">
